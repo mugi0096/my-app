@@ -1,0 +1,15 @@
+name: Github Actions Demo
+run-name: ${{ github.actor }} is testing out Github actions
+on: [push]
+jobs:
+  Explore-Github-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Set Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependency
+        run: yarn install
